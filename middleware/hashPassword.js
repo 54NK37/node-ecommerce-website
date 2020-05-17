@@ -14,6 +14,7 @@ const hash = async(req, res, next) => {
         }
         user.password = await bcrypt.hash(user.password,8)
         req.user = user
+       // console.log(req.user)
         next()
     } catch (e) {
         console.log(e)

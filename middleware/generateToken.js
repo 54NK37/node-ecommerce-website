@@ -16,6 +16,8 @@ const generateToken = async (req,res,next)=>{
        user.tokens= user.tokens.concat([{_id,token}])
         req.user = user 
         req.token=token
+
+        //console.log(req.user)
         next()
     }
     catch(e)

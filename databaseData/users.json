@@ -11,12 +11,12 @@
         "cart": [{
                 "product": "Bread",
                 "quantity": 2,
-                "currentprice": 30
+                "price": 30
             },
             {
                 "product": "Apples",
                 "quantity": 3,
-                "currentprice": 80
+                "price": 80
             }
         ],
         "address": {
@@ -74,12 +74,12 @@
         "cart": [{
                 "product": "Cashewnut",
                 "quantity": 2,
-                "currentprice": 300
+                "price": 300
             },
             {
                 "product": "Oranges",
                 "quantity": 2,
-                "currentprice": 70
+                "price": 70
             }
         ],
         "address": {

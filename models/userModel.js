@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
+
 var cartSchema = new mongoose.Schema({
     product: { type: String },
     quantity: { type: Number },
-    currentPrice: { type: Number },
+    price: { type: Number },
 })
 
 var address = new mongoose.Schema({
