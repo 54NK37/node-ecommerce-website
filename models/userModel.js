@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
-                throw new Error('Password cannot be password')
+                throw 'Password cannot be password'
             }
         }
     },
@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         validate(value) {
             if (!validator.isEmail(value)) {
-                throw new Error('Invalid Email')
+                throw 'Invalid Email'
             }
         }
     },

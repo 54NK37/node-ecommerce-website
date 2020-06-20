@@ -5,7 +5,7 @@ const getAllProducts=async(req, res) => {
     try {
         const products = await Product.find()
         if (products == null) {
-            throw new Error('Unable to retrive products')
+            throw 'Unable to retrive products'
         }
 
         res.status(200).send(products)
@@ -20,7 +20,7 @@ const getCategoryProducts = async(req, res) => {
     try {
         const products = await Product.find({ "category": req.params.category })
         if (products == null) {
-            throw new Error('Unable to retrive products')
+            throw 'Unable to retrive products'
         }
 
         res.status(200).send(products)

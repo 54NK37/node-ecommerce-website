@@ -27,7 +27,8 @@ const productSchema = new mongoose.Schema({
     availableQuantities: {
         type: Number,
         required: true
-    }
+    },
+    url : String
 })
 
 const Product = new mongoose.model('Product', productSchema)

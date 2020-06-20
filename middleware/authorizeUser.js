@@ -6,8 +6,9 @@ const auth = async (req,res,next)=>{
         const token = req.header('Authorization').replace('Bearer ','')
         const decodedToken =jwt.verify(token,process.env.JWT_SECRET)
         const user = await User.findOne({"userName" : decodedToken.userName,"tokens.token":token})
+        // console.log(user)
     
-        if(user == null)
+        if(user === null)
         {
             throw 'Please Authenticate!'
         }

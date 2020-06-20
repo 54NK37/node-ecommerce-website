@@ -6,7 +6,8 @@
         "availableStatus": true,
         "purchasedDate": "05-02-2019",
         "daysToExpire": 3,
-        "availableQuantities": 20
+        "availableQuantities": 20,
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_2LEFtLLZk2dw_OZTqH0DbBA5Hl7aMNKBdSNt8K8nQQLPb5DT&usqp=CAU"
     }, {
 
         "name": "Bread",
@@ -15,7 +16,8 @@
         "availableStatus": true,
         "purchasedDate": "05-02-2019",
         "expiryDate": "05-08-2019",
-        "availableQuantities": 120
+        "availableQuantities": 120,
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRPDIbEnS9HL4rps2Gs9JWg6niBl4Ei97mtxfil6U9fbMHPeRh-&usqp=CAU"
     }, {
 
         "name": "Apple",
@@ -24,7 +26,8 @@
         "availableStatus": true,
         "purchasedDate": "07-02-2019",
         "daysToExpire": 3,
-        "availableQuantities": 40
+        "availableQuantities": 40,
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIe58vMWmpiby-bzJpKJNd4-cYCo9qrpaXgzEJqqkRQjPTBA9q&usqp=CAU"
     }, {
 
         "name": "Oats",
@@ -33,7 +36,8 @@
         "availableStatus": true,
         "purchasedDate": "07-04-2019",
         "expiryDate": "06-10-2019",
-        "availableQuantities": 50
+        "availableQuantities": 50,
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6jd9Ed9SdGrtWXW1ilZoI-NUg_sViMG9k9BQKNWk3oLNma5cb&usqp=CAU"
     }, {
 
         "name": "Banana",
@@ -42,7 +46,8 @@
         "availableStatus": false,
         "purchasedDate": "07-04-2019",
         "daysToExpire": 3,
-        "availableQuantities": 0
+        "availableQuantities": 0,
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-aAHYx1HkmyPo7cxIkZXphtZU09r8ZReE5ZAeZy2uLc48iWWU&usqp=CAU"
     }, {
 
         "name": "Cucumber",
@@ -51,7 +56,8 @@
         "category": "Vegetables",
         "currentPrice": 20,
         "daysToExpire": 4,
-        "purchasedDate": "05-05-2019"
+        "purchasedDate": "05-05-2019",
+        "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhyec_lAmSgLWFJKDJ6htweBjB65o4-t3qL5KOPfGK_TVYHd7z&usqp=CAU"
     }
 
 ]

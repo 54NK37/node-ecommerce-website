@@ -3,7 +3,7 @@ const router = new express.Router()
 const generateToken = require('../middleware/generateToken')
 const hash = require('../middleware/hashPassword')
 const auth = require('../middleware/authorizeUser')
-const {signup,login,logout,logoutAll,getUser,getUserCart,getUserOrders,placeOrder} = require('../controllers/usersController')
+const {signup,login,logout,logoutAll,getUser,getUserCart,getUserOrders,placeOrder,updateCart} = require('../controllers/usersController')
 
 //signup
 router.post('/signup',hash,generateToken,signup)
@@ -25,6 +25,9 @@ router.get('/me/cart',auth, getUserCart)
 
 //retrieve order of user
 router.get('/me/orders', auth,getUserOrders)
+
+//update cart
+router.post('/me/updateCart',auth,updateCart)
 
 //place order from exisiting cart
 router.post('/me/placeorder',auth,placeOrder)

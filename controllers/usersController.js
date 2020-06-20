@@ -11,7 +11,7 @@ const signup = async(req, res) => {
 
     } catch (e) {
         console.log(e)
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
 
 }
@@ -36,7 +36,7 @@ const login = async(req, res) => {
 
     } catch (e) {
         console.log(e)
-        res.status(400).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(400).send(e)
     }
 }
 
@@ -45,11 +45,15 @@ const logout = async (req,res)=>{
 
     try {
         const user = req.user
+        if(req.body !== null)
+         {
+             user.cart = req.body
+         }
         user.tokens = user.tokens.filter(token=>req.token !== token.token)
         await user.save()
         res.status(200).send(user)
     } catch (e) {
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
 }
 
@@ -59,10 +63,14 @@ const logoutAll = async (req,res)=>{
     try {
         const user = req.user
          user.tokens =[]
+         if(req.body !== null)
+         {
+             user.cart = req.body
+         }
         await user.save()
         res.status(200).send(user)
     } catch (e) {
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
 }
 
@@ -71,7 +79,7 @@ const getUser = async(req, res) => {
         //let user = await User.findOne({ "userName": req.params.userName })
         res.status(200).send(req.user)
     } catch (e) {
-        res.status(400).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(400).send(e)
     }
 
 }
@@ -86,7 +94,7 @@ const getUserCart = async(req, res) => {
         }
         res.status(200).send(cart)
     } catch (e) {
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
 
 }
@@ -101,27 +109,36 @@ const getUserOrders =async(req, res) => {
         }
         res.status(200).send(orders)
     } catch (e) {
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
 } 
 
+const updateCart = async(req,res)=>{
+const cart = req.body.cart
+const user = req.user
+console.log(cart)
+}
+
 const placeOrder = async (req,res)=>{
     const user = req.user
-    const cart = user.cart
     const _id = new mongoose.Types.ObjectId()
+    console.log(req.body)
+    let cartt =req.body.cart
     const order={
-        cart,
+        cart : cartt,
         _id,
         //this all will be calculated in frontend
-        totalPrice  : 300,
+        totalPrice  : req.body.totalPrice,
         orderDate : new Date().toString(),
+        deliveryAddress : req.body.deliveryAddress.pin === null ? null :req.body.deliveryAddress , 
         status:"Processing"
     }
-
+    
     try{
-        if(cart.length !=0)
+        if(req.body.cart.length !=0)
         {
             user.orders = user.orders.concat(order)
+            if(!req.body.purchasing)
             user.cart=[]
         }
         else{
@@ -131,7 +148,7 @@ const placeOrder = async (req,res)=>{
         await user.save()
         res.status(200).send(user)
     } catch (e) {
-        res.status(500).send({ error: e.errmsg ? e.errmsg : e })
+        res.status(500).send(e)
     }
   
 }
@@ -144,5 +161,6 @@ module.exports={
     getUser,
     getUserCart,
     getUserOrders,
+    updateCart,
     placeOrder
 }
